@@ -1,10 +1,8 @@
-import java.util.List;
+import java.util.Scanner;
 
-public class FuncionariosAdm extends Funcionarios{
+public class FuncionariosAdm extends Universidade {
 
-
-
-
+    Scanner adm = new Scanner(System.in);
     String funcaoAdm;
     String senioridade;
 
@@ -12,6 +10,13 @@ public class FuncionariosAdm extends Funcionarios{
         super(nome, CPF, numeroDeRegistro, orgaoDeLotacao, salario);
         this.funcaoAdm = funcaoAdm;
         this.senioridade = senioridade;
+    }
+
+    public void aumentoSalario(){
+        System.out.println("Informe o salário do Funcionario ADM");
+        double sal1 = adm.nextDouble();
+        double salarioBruto = (sal1 * 0.1) + sal1;
+        System.out.println("O novo salário é: " +salarioBruto);
     }
 
     public String getFuncaoAdm() {
@@ -28,9 +33,5 @@ public class FuncionariosAdm extends Funcionarios{
 
     public void setSenioridade(String senioridade) {
         this.senioridade = senioridade;
-    }
-
-    public void aumentoSalario(){
-        double salarioBruto = (salario * 0.1) + salario;
     }
 }

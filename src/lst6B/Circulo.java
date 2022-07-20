@@ -7,7 +7,8 @@ public class Circulo implements FiguraGeometrica{
 
     public Circulo() {
         this.raio = raio;
-        this.pi = 3.14;
+        this.pi = pi;
+        this.area = area;
         this.perimetro = perimetro;
     }
 

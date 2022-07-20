@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class Professores extends Funcionarios{
+public class Professores extends Universidade {
 
-    List<Turma> turmas = new ArrayList<>();
-
+    Scanner input = new Scanner(System.in);
+    ArrayList<Turma> turmas = new ArrayList<>();
 
     String nivelGraduacao;
     String disciplinaMinistrada;
@@ -12,84 +13,52 @@ public class Professores extends Funcionarios{
     int qtdeTurmas;
     int numTurmas;
     int totalTurmas;
+    String reembolsoDespesa;
 
-
-
-
-    public Professores(String nome, String CPF, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelGraduacao, String disciplinaMinistrada, String qtdeAlunos, int qtdeTurmas, int numTurmas) {
+    public Professores(String nome, String CPF, String numeroDeRegistro, String orgaoDeLotacao, double salario) {
         super(nome, CPF, numeroDeRegistro, orgaoDeLotacao, salario);
-        this.nivelGraduacao = nivelGraduacao;
-        this.disciplinaMinistrada = disciplinaMinistrada;
-        this.qtdeAlunos = qtdeAlunos;
-        this.qtdeTurmas = qtdeTurmas;
-        this.numTurmas = numTurmas;
-        this.totalTurmas = totalTurmas;
+        this.nome = nome;
+        this.CPF = CPF;
+        this.numeroDeRegistro = numeroDeRegistro;
+        this.orgaoDeLotacao = orgaoDeLotacao;
+        this.salario = salario;
     }
+    public void aumentoSalario() {
 
-    public void adicionaTurma(Turma turma){
-        this.turmas.add(turma);
+        System.out.println("Informe o salário de Professor");
+        double sal1 = input.nextDouble();
+        double salarioBruto = (sal1 * 0.1) + sal1;
+        System.out.println("O novo salário é: " +salarioBruto);
     }
+    public void cadastrarTurma() {
 
-    public List<Turma> mostrarTurmas(){
-        return this.turmas;
+        System.out.println("Digite o nome da Turma a ser cadastrada: ");
+        nome = input.nextLine();
+
+        this.turmas.add(new Turma(nome));
     }
+    public void mostrarTurmas() {
+        System.out.println("Lista de Turmas");
+        for (int i = 0; i < this.turmas.size(); i++) {
+            System.out.println("Turma cadastrada " + turmas.get(i).nome);
 
-    public String getNivelGraduacao() {
-        return nivelGraduacao;
+        }
     }
+    public void excluiTurmas() {
+        System.out.println("Digite o nome da Turma a ser excluída");
+        String deletTurma = input.nextLine();
 
-    public void setNivelGraduacao(String nivelGraduacao) {
-        this.nivelGraduacao = nivelGraduacao;
+        boolean deletarTurma = false;
+
+        for (int i = 0; i < turmas.size(); i++) {
+            if (this.turmas.get(i).getNome().equals(deletTurma)) {
+                this.turmas.remove(i);
+                System.out.println("Turma excluída com Sucesso ....");
+                deletarTurma = true;
+            }
+        }
+        if (!deletarTurma) {
+            System.out.println("Valor informado inválido, favor verificar...");
+        }
     }
-
-    public String getDisciplinaMinistrada() {
-        return disciplinaMinistrada;
-    }
-
-    public void setDisciplinaMinistrada(String disciplinaMinistrada) {
-        this.disciplinaMinistrada = disciplinaMinistrada;
-    }
-
-    public String getQtdeAlunos() {
-        return qtdeAlunos;
-    }
-
-    public void setQtdeAlunos(String qtdeAlunos) {
-        this.qtdeAlunos = qtdeAlunos;
-    }
-
-    public int getQtdeTurmas() {
-        return qtdeTurmas;
-    }
-
-    public void setQtdeTurmas(int qtdeTurmas) {
-        this.qtdeTurmas = qtdeTurmas;
-    }
-
-    public int getNumTurmas() {
-        return numTurmas;
-    }
-
-    public void setNumTurmas(int numTurmas) {
-        this.numTurmas = numTurmas;
-    }
-
-    public int getTotalTurmas() {
-        return totalTurmas;
-    }
-
-    public void setTotalTurmas(int totalTurmas) {
-        this.totalTurmas = totalTurmas;
-    }
-
-    public void adicionaTurma(){
-        totalTurmas = qtdeTurmas + numTurmas;
-    }
-
-    public double aumentoSalario(){
-        double salarioBruto = (salario * 0.1) + salario;
-        return salarioBruto;
-    }
-
-
 }
