@@ -92,9 +92,7 @@ public class MainEscola {
 
             }
 
-
             estagiario.cadastraEstagiario();
-
 
         }
     }
