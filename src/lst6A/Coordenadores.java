@@ -6,7 +6,7 @@ public class Coordenadores extends Universidade {
     ArrayList<Professores> professores = new ArrayList<>();
 
     String professoresSupervisionados;
-    String reembolsoDespesa;
+
 
     public Coordenadores(String nome, String CPF, String numeroDeRegistro, String orgaoDeLotacao, double salario) {
         super(nome, CPF, numeroDeRegistro, orgaoDeLotacao, salario);
@@ -25,13 +25,13 @@ public class Coordenadores extends Universidade {
     public void cadastraProfessor(){
 
         System.out.println("Informe o nome do professor a ser cadastrado ");
-        nome = entrada.next();
+        nome = entrada.nextLine();
         System.out.println("Informe o CPF ");
-        CPF = entrada.next();
+        CPF = entrada.nextLine();
         System.out.println("Informe o Numero de Registro ");
-        numeroDeRegistro = entrada.next();
+        numeroDeRegistro = entrada.nextLine();
         System.out.println("Informe o Orgao de Lotação ");
-        orgaoDeLotacao = entrada.next();
+        orgaoDeLotacao = entrada.nextLine();
         System.out.println("Informe o salário ");
         salario = entrada.nextDouble();
 

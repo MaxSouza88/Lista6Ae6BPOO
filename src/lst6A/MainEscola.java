@@ -6,13 +6,14 @@ public class MainEscola {
 
         Scanner input = new Scanner(System.in);
 
+
         Professores professor = new Professores("Pedro", "005", "8122", "CPS", 5000);
         Coordenadores coordenadores = new Coordenadores("Carlos", "2218", "8222", "CPS", 5500);
         FuncionariosAdm funcionariosAdm = new FuncionariosAdm("Joao", "3399", "2255", "ADM", 1800, "Auxiliar", "Junior");
-        Estagiario estagiario = new Estagiario();
+        Estagiario estagiario = new Estagiario("a");
         Turma turma = new Turma("Turma A");
 
-        boolean opcao = true;
+        /*boolean opcao = true;
 
         while (opcao) {
             System.out.println("Digite a opção desejada");
@@ -23,7 +24,8 @@ public class MainEscola {
             System.out.println(" 5 - Professores: Cadastrar uma Turma ");
             System.out.println(" 6 - Professores: Consultar Turmas cadastradas ");
             System.out.println(" 7 - Professores: Excluir Turma cadastradas ");
-            System.out.println(" 8 - Para sair do Programa ");
+            System.out.println(" 8 - Para cadastrar estagiário ");
+            System.out.println(" 9 - Para sair do Programa ");
 
             int escolha = input.nextInt();
 
@@ -83,6 +85,10 @@ public class MainEscola {
                     break;
 
                 case 8:
+                    professor.cadastraEstagiario();
+                    break;
+
+                case 9:
                     System.out.println("Finalizando Programa ....");
                     opcao = false;
                     break;
@@ -91,9 +97,9 @@ public class MainEscola {
                     System.out.println("Valor inválido. Escolha novamente.");
 
             }
+        }*/
+        professor.cadastraEstagiario();
+       // professor.mostraEstag();
 
-            estagiario.cadastraEstagiario();
-
-        }
     }
 }

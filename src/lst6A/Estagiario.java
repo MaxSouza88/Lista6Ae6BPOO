@@ -5,14 +5,12 @@ public class Estagiario {
 
     Scanner estagiario = new Scanner(System.in);
 
-    ArrayList<Estagiario> estagiarios = new ArrayList<>();
-
+    String nome;
     String bolsa;
-    String reembolsoDespesa;
 
-    public void Estagiario() {
+    public Estagiario(String nome) {
+        this.nome = nome;
         this.bolsa = bolsa;
-        this.reembolsoDespesa = reembolsoDespesa;
     }
 
     public void salarioEstag(){
@@ -24,21 +22,5 @@ public class Estagiario {
         System.out.println("O novo valor da Bolsa é:" +salarioBruto);
     }
 
-    public void cadastraEstagiario(){
-
-        if( estagiarios.size() <=2){
-            System.out.println("Digite o nome do Estagiário: ");
-            String nome = estagiario.nextLine();
-
-            this.estagiarios.add(new Estagiario());
-
-            System.out.println("Estagiário adicionado");
-
-        }else {
-            System.out.println("Não é possível mais cadastrar ");
-        }
-
-
 
     }
-}
